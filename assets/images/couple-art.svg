@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" fill="none">
+  <defs>
+    <!-- Royal Gold Gradient -->
+    <linearGradient id="goldG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5D6" />
+      <stop offset="25%" stop-color="#E8C362" />
+      <stop offset="60%" stop-color="#C59B27" />
+      <stop offset="85%" stop-color="#9A7013" />
+      <stop offset="100%" stop-color="#FCEAB3" />
+    </linearGradient>
+
+    <!-- Royal Maroon Gradient -->
+    <linearGradient id="maroonG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B1D2C" />
+      <stop offset="50%" stop-color="#670F1C" />
+      <stop offset="100%" stop-color="#44050F" />
+    </linearGradient>
+
+    <!-- Soft Bridal Skin Tone -->
+    <linearGradient id="skinG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDF3E7" />
+      <stop offset="100%" stop-color="#F6DCBE" />
+    </linearGradient>
+
+    <!-- Aura Radial Gradient -->
+    <radialGradient id="auraG" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFDF7" stop-opacity="1" />
+      <stop offset="70%" stop-color="#FAF1DC" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#F2DFB8" stop-opacity="0.3" />
+    </radialGradient>
+
+    <!-- Drop Shadow -->
+    <filter id="royalShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#550A14" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <!-- ================= BACKGROUND HALO & ORNATE FRAME ================= -->
+  <!-- Outer Aura Glow -->
+  <circle cx="180" cy="120" r="105" fill="url(#auraG)" filter="url(#royalShadow)" />
+
+  <!-- Circular Gold Borders -->
+  <circle cx="180" cy="120" r="105" stroke="url(#goldG)" stroke-width="2.5" />
+  <circle cx="180" cy="120" r="99" stroke="url(#goldG)" stroke-width="1" stroke-dasharray="3 4" opacity="0.8" />
+  <circle cx="180" cy="120" r="94" stroke="url(#maroonG)" stroke-width="0.8" opacity="0.3" />
+
+  <!-- Auspicious Kalash / Arch Top Accent -->
+  <path d="M165 17 Q180 8 195 17 Q180 23 165 17 Z" fill="url(#goldG)" />
+  <circle cx="180" cy="15" r="3" fill="#8B1D2C" />
+
+  <!-- Hanging Marigold & Pearl Garlands at Top Arch -->
+  <g stroke="url(#goldG)" stroke-width="0.8" opacity="0.7">
+    <path d="M120 40 Q150 28 180 32 Q210 28 240 40" fill="none" />
+    <circle cx="130" cy="38" r="2" fill="#D4AF37" />
+    <circle cx="150" cy="33" r="2.5" fill="#C5162D" />
+    <circle cx="180" cy="32" r="3" fill="#D4AF37" />
+    <circle cx="210" cy="33" r="2.5" fill="#C5162D" />
+    <circle cx="230" cy="38" r="2" fill="#D4AF37" />
+  </g>
+
+  <!-- ================= LEFT: ROYAL GROOM (वर - विक्की) ================= -->
+  <g id="groom-figure">
+    <!-- Safa / Royal Turban (Fluid, layered folds) -->
+    <!-- Base turban dome -->
+    <path d="M102 74 C96 60 108 42 126 38 C144 34 158 45 160 58 C161 68 155 78 148 84 C132 86 112 84 102 74 Z" fill="url(#maroonG)" />
+    
+    <!-- Turban folds (Swirling gold embroidered wraps) -->
+    <path d="M104 68 C115 56 136 50 156 56" stroke="url(#goldG)" stroke-width="2.2" stroke-linecap="round" fill="none" />
+    <path d="M101 75 C114 65 135 60 158 66" stroke="url(#goldG)" stroke-width="2.2" stroke-linecap="round" fill="none" />
+    <path d="M104 81 C116 73 134 68 152 74" stroke="url(#goldG)" stroke-width="1.8" stroke-linecap="round" fill="none" />
+    
+    <!-- Turban Back Tail (Turra / Shamla) flowing down -->
+    <path d="M102 72 C96 75 92 88 94 102 C95 110 98 122 96 132 C99 122 101 106 102 92 Z" fill="url(#maroonG)" opacity="0.85" />
+    <path d="M96 90 Q94 108 97 126" stroke="url(#goldG)" stroke-width="1.2" fill="none" />
+
+    <!-- Royal Kalgi (Feather Brooch) with Ruby -->
+    <path d="M125 38 C124 24 128 15 132 10 C131 18 132 26 128 36 Z" fill="url(#goldG)" />
+    <path d="M128 38 C129 27 136 18 142 14 C138 22 136 30 131 38 Z" fill="url(#goldG)" opacity="0.8" />
+    <circle cx="127" cy="37" r="4.5" fill="url(#goldG)" />
+    <circle cx="127" cy="37" r="2.5" fill="#9C1828" />
+    <!-- Pearl drop below Kalgi -->
+    <circle cx="127" cy="44" r="1.5" fill="#FFF9ED" />
+
+    <!-- Groom's Face Profile (Graceful, classic Indian silhouette) -->
+    <path d="M128 78 C134 80 138 84 140 88 C143 92 147 93 151 94 C148 97 144 98 143 100 C144 103 146 104 143 106 C140 108 137 109 136 112 C134 116 130 120 124 122 C120 120 117 114 116 108 C115 98 118 86 128 78 Z" fill="url(#skinG)" />
+    
+    <!-- Gentle Eye Line & Royal Tilak -->
+    <path d="M136 88 Q140 88 143 91" stroke="#5A2412" stroke-width="1.2" stroke-linecap="round" fill="none" />
+    <path d="M135 83 L138 84" stroke="#8B1D2C" stroke-width="2" stroke-linecap="round" /> <!-- Shubh Tilak -->
+
+    <!-- Groom's Neck & Royal Sherwani -->
+    <path d="M120 120 C122 126 124 132 126 138 L124 218 C112 218 95 214 86 210 C82 195 80 172 84 154 C88 140 104 132 120 120 Z" fill="url(#maroonG)" />
+    
+    <!-- Sherwani Royal Collar (Mandarin collar with gold zari) -->
+    <path d="M120 122 C126 124 135 128 136 136 C132 138 126 136 122 134 Z" fill="url(#goldG)" />
+    <path d="M126 136 L124 218" stroke="url(#goldG)" stroke-width="2.5" /> <!-- Center button placket -->
+    
+    <!-- Golden Buttons -->
+    <circle cx="125" cy="146" r="1.8" fill="#FFF5D6" />
+    <circle cx="125" cy="156" r="1.8" fill="#FFF5D6" />
+    <circle cx="125" cy="166" r="1.8" fill="#FFF5D6" />
+    <circle cx="125" cy="176" r="1.8" fill="#FFF5D6" />
+    <circle cx="125" cy="186" r="1.8" fill="#FFF5D6" />
+
+    <!-- Royal Angavastram / Stole (Gold Brocade Dupatta draped over shoulder) -->
+    <path d="M106 138 C112 144 116 156 116 172 C116 190 114 206 112 218 L100 216 C102 202 104 184 104 168 C104 156 100 148 96 142 Z" fill="url(#goldG)" />
+    <!-- Stole embroidery patterns -->
+    <path d="M102 154 Q110 156 114 154 M102 174 Q110 176 115 174 M101 194 Q109 196 113 194" stroke="#8C6517" stroke-width="1" fill="none" />
+
+    <!-- Royal Pearl Mala (Multi-strand groom necklace) -->
+    <path d="M124 134 Q132 146 128 162" stroke="#FFFDF8" stroke-width="2.2" stroke-dasharray="1 3" stroke-linecap="round" fill="none" />
+    <circle cx="128" cy="165" r="3" fill="url(#goldG)" />
+    <circle cx="128" cy="165" r="1.5" fill="#2E7D32" /> <!-- Emerald pendant -->
+  </g>
+
+  <!-- ================= RIGHT: ROYAL BRIDE (वधू - सुरुचि) ================= -->
+  <g id="bride-figure">
+    <!-- Bridal Chunari / Odhani (Gracefully draped over head) -->
+    <!-- Base veil volume -->
+    <path d="M228 50 C212 50 200 64 198 80 C196 98 194 135 190 165 C188 185 186 205 185 218 C198 218 248 218 266 210 C272 195 272 165 268 135 C264 105 258 72 248 58 C242 52 235 50 228 50 Z" fill="url(#maroonG)" />
+    
+    <!-- Ornate Golden Kiran / Gota Patti Border on Veil -->
+    <path d="M228 50 C212 50 200 64 198 80 C196 98 194 135 190 165 C188 185 186 205 185 218" stroke="url(#goldG)" stroke-width="4.5" stroke-linecap="round" fill="none" />
+    <!-- Fine inner scallop zari stitch -->
+    <path d="M230 54 C216 54 204 66 202 82 C200 98 198 135 194 165" stroke="#FFF5D6" stroke-width="1" stroke-dasharray="2 3" fill="none" />
+
+    <!-- Zari Booti (Gold floral buttis on Chunari) -->
+    <g fill="url(#goldG)" opacity="0.85">
+      <circle cx="236" cy="80" r="2" /><circle cx="250" cy="98" r="2" /><circle cx="228" cy="116" r="2" />
+      <circle cx="248" cy="132" r="2" /><circle cx="222" cy="150" r="2" /><circle cx="242" cy="168" r="2" />
+      <circle cx="216" cy="186" r="2" /><circle cx="238" cy="198" r="2" /><circle cx="258" cy="182" r="2" />
+    </g>
+
+    <!-- Bride's Face Silhouette (Soft, feminine, classical Indian beauty) -->
+    <path d="M222 76 C216 78 211 84 210 90 C208 94 204 96 200 97 C204 100 206 102 206 104 C203 106 202 108 206 110 C209 112 212 113 214 116 C217 120 221 123 226 124 C230 120 234 112 234 104 C234 92 230 82 222 76 Z" fill="url(#skinG)" />
+
+    <!-- Bride's Eye with Kajal & Bindi -->
+    <path d="M214 91 Q210 90 206 93" stroke="#4A180E" stroke-width="1.3" stroke-linecap="round" fill="none" />
+    <circle cx="211" cy="84" r="1.8" fill="#9C1828" /> <!-- Auspicious Red Bindi -->
+
+    <!-- Maang Tikka (Golden bridal forehead ornament) -->
+    <path d="M224 64 L216 78" stroke="url(#goldG)" stroke-width="1.4" />
+    <circle cx="215" cy="80" r="3.2" fill="url(#goldG)" />
+    <circle cx="215" cy="80" r="1.5" fill="#9C1828" />
+
+    <!-- Traditional Bridal Nath (Nose Ring with Pearl Chain) -->
+    <circle cx="203" cy="102" r="4.2" stroke="url(#goldG)" stroke-width="1.4" fill="none" />
+    <circle cx="204" cy="106" r="1.4" fill="#9C1828" />
+    <!-- Pearl chain arching gracefully up to ear -->
+    <path d="M206 100 Q216 94 226 92" stroke="url(#goldG)" stroke-width="1" stroke-dasharray="1.5 2" fill="none" />
+
+    <!-- Traditional Jhumka (Earring) -->
+    <circle cx="226" cy="94" r="2" fill="url(#goldG)" />
+    <path d="M224 96 L228 96 L229 101 L223 101 Z" fill="url(#goldG)" />
+    <circle cx="226" cy="103" r="1.2" fill="#FFF5D6" />
+
+    <!-- Royal Guluband & Rani Haar (Bridal Necklaces) -->
+    <!-- Choker -->
+    <path d="M218 122 Q224 128 230 124" stroke="url(#goldG)" stroke-width="2.5" fill="none" />
+    <!-- Long Haar with gemstones -->
+    <path d="M214 126 Q224 140 234 128" stroke="url(#goldG)" stroke-width="2" fill="none" />
+    <circle cx="224" cy="136" r="3" fill="url(#goldG)" />
+    <circle cx="224" cy="136" r="1.5" fill="#9C1828" />
+
+    <!-- Bridal Lehenga Choli (Embroidery & Zari) -->
+    <path d="M212 136 C206 142 196 154 192 170 C194 186 195 204 196 218 L240 218 C242 200 242 178 240 156 C238 144 230 138 212 136 Z" fill="url(#maroonG)" />
+    
+    <!-- Golden Zari Embroidery Bands on Lehenga -->
+    <path d="M194 175 Q216 182 240 176" stroke="url(#goldG)" stroke-width="2.2" fill="none" />
+    <path d="M195 192 Q217 200 241 194" stroke="url(#goldG)" stroke-width="2.8" fill="none" />
+    <path d="M196 208 Q218 216 242 210" stroke="url(#goldG)" stroke-width="2.2" fill="none" />
+  </g>
+
+  <!-- ================= CENTER: VARMALA & SHUBH GATHBANDHAN ================= -->
+  <!-- Auspicious Sacred Knot / Floral Garland uniting the couple -->
+  <g id="varmala-garland">
+    <!-- Garland Arcs (Fresh Red Rose Petals + Golden Beads) -->
+    <path d="M136 138 Q175 168 214 138" stroke="url(#goldG)" stroke-width="2.5" fill="none" />
+    
+    <!-- Rose buds & Pearls on Varmala -->
+    <circle cx="145" cy="147" r="3.2" fill="#C5162D" stroke="url(#goldG)" stroke-width="0.8" />
+    <circle cx="155" cy="154" r="3.2" fill="#D4AF37" stroke="#FFF" stroke-width="0.6" />
+    <circle cx="166" cy="158" r="3.5" fill="#C5162D" stroke="url(#goldG)" stroke-width="0.8" />
+    <circle cx="176" cy="158" r="3.5" fill="#C5162D" stroke="url(#goldG)" stroke-width="0.8" />
+    <circle cx="187" cy="154" r="3.2" fill="#D4AF37" stroke="#FFF" stroke-width="0.6" />
+    <circle cx="197" cy="147" r="3.2" fill="#C5162D" stroke="url(#goldG)" stroke-width="0.8" />
+
+    <!-- Center Sacred Heart Medallion & Knot -->
+    <g transform="translate(171, 102)">
+      <!-- Golden aura -->
+      <circle cx="9" cy="9" r="14" fill="#FFF9ED" stroke="url(#goldG)" stroke-width="1.5" />
+      <!-- Sacred Knot / Auspicious Heart -->
+      <path d="M9 6 C9 3 4 1 2 4.5 C0 8 3 12 9 16 C15 12 18 8 16 4.5 C14 1 9 3 9 6 Z" fill="#9C1828" />
+      <circle cx="9" cy="8" r="2" fill="url(#goldG)" />
+    </g>
+  </g>
+
+  <!-- Auspicious Shubh Vivah Tagline below frame -->
+  <g opacity="0.95">
+    <path d="M135 224 Q180 232 225 224" stroke="url(#goldG)" stroke-width="1.5" fill="none" />
+    <circle cx="180" cy="228" r="2.5" fill="#8B1D2C" />
+  </g>
+</svg>

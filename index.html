@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>सुरुचि संग विक्की — शुभ विवाह निमंत्रण | 24 नवंबर 2026</title>
+  
+  <!-- Open Graph Meta Tags for WhatsApp, Facebook, Telegram -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Suruchi weds Vikky — शुभ विवाह 24.11.2026">
+  <meta property="og:description" content="॥ श्री गणेशाय नमः ॥ सस्नेह निमंत्रण — सुरुचि संग विक्की के पावन परिणयोत्सव पर आप सपरिवार सादर आमंत्रित हैं।">
+  <meta property="og:image" content="assets/images/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Wedding Invitation Card - Suruchi & Vikky">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Suruchi weds Vikky — शुभ विवाह निमंत्रण">
+  <meta name="twitter:description" content="सस्नेह निमंत्रण : 24 नवंबर 2026 (मंगलवार) - हरनौत, नालंदा (बिहार)">
+  <meta name="twitter:image" content="assets/images/og-preview.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/ganesha.svg">
+  <meta name="theme-color" content="#7A1F2B">
+
+  <!-- Google Fonts: Devanagari & Latin -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Great+Vibes&family=Hind:wght@400;500;600;700&family=Rozha+One&family=Tiro+Devanagari+Hindi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Floating Falling Petals Canvas -->
+  <canvas id="petals-canvas" aria-hidden="true"></canvas>
+
+  <!-- Audio Element (Aaj Sajeya from music/ or assets/audio/ or synthesized fallback) -->
+  <audio id="wedding-audio" preload="auto" loop>
+    <source src="music/aaj-sajeya.mp3" type="audio/mpeg">
+    <source src="assets/audio/aaj-sajeya.mp3" type="audio/mpeg">
+    <source src="music/music.mp3" type="audio/mpeg">
+    <source src="music/song.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ==============================================
+       SCREEN 0: ROYAL ENVELOPE / WELCOME OPEN SCREEN
+       ============================================== -->
+  <div id="welcome-overlay" class="welcome-overlay" role="dialog" aria-modal="true" aria-label="Wedding Envelope">
+    <div class="envelope-card">
+      <div class="envelope-stamp">
+        <img src="assets/images/ganesha.svg" alt="Lord Ganesha Emblem" class="envelope-ganesha">
+      </div>
+      
+      <p class="envelope-shloka">॥ श्री गणेशाय नमः ॥</p>
+      <span class="envelope-badge">सस्नेह निमंत्रण</span>
+      
+      <h1 class="envelope-names">
+        <span class="name-suruchi">सुरुचि</span>
+        <span class="weds-heart">♥</span>
+        <span class="name-vikky">विक्की</span>
+      </h1>
+      
+      <p class="envelope-en-names">Suruchi & Vikky</p>
+      
+      <div class="envelope-date-pill">
+        <svg class="pill-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 4h-2v-2h2v2zm4 0h-2v-2h2v2z"/>
+        </svg>
+        <span>24 नवंबर 2026 (मंगलवार)</span>
+      </div>
+
+      <div class="seal-container">
+        <button id="open-card-btn" class="open-card-btn" aria-label="Open Invitation and play music">
+          <span class="wax-seal">
+            <span class="seal-inner">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="#FAF4E8">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </span>
+          </span>
+          <span class="btn-text">
+            <strong>निमंत्रण खोलें</strong>
+            <small>Open Invitation 🎵</small>
+          </span>
+        </button>
+      </div>
+
+      <p class="audio-hint">संगीत के साथ डिजिटल निमंत्रण पत्र का आनंद लें</p>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       TOP CONTROLS BAR: Language Switcher & Audio Float
+       ============================================== -->
+  <header class="top-nav-bar">
+    <div class="nav-container">
+      <div class="site-tag">💍 सुरुचि संग विक्की</div>
+      <div class="nav-actions">
+        <!-- Language Switcher -->
+        <button id="lang-toggle-btn" class="lang-toggle-btn" aria-label="Switch Language (हिंदी / English)">
+          <span class="lang-text" id="lang-badge">EN</span>
+        </button>
+        <!-- Floating Petals Toggle -->
+        <button id="petals-toggle-btn" class="icon-toggle-btn" title="Toggle Petals" aria-label="Toggle falling petals">
+          🌸
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Floating Audio Player Button -->
+  <div class="floating-music-box">
+    <button id="music-toggle-btn" class="music-toggle-btn" title="Play / Pause Music" aria-label="Play or pause wedding music">
+      <span class="disc-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+          <circle cx="12" cy="12" r="3" fill="currentColor"/>
+          <path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </span>
+      <span class="sound-wave" id="sound-wave">
+        <i></i><i></i><i></i><i></i>
+      </span>
+      <span class="music-label" id="music-label">संगीत</span>
+    </button>
+  </div>
+
+  <!-- ==============================================
+       MAIN WEDDING INVITATION CONTAINER (Royal Card)
+       ============================================== -->
+  <main class="main-card-wrapper" id="invitation-content">
+
+    <!-- Card Top Header Arch -->
+    <div class="royal-arch-top">
+      <div class="arch-gold-band"></div>
+    </div>
+
+    <!-- ==========================================
+         SECTION 1: HERO & MANGALACHARAN
+         ========================================== -->
+    <section class="section hero-section" id="hero">
+      
+      <!-- Lord Ganesha Motif -->
+      <div class="ganesha-emblem">
+        <img src="assets/images/ganesha.svg" alt="श्री गणेशाय नमः" class="ganesha-svg">
+      </div>
+
+      <h2 class="shree-ganesh-title">॥ श्री गणेशाय नमः ॥</h2>
+
+      <!-- Sacred Shlokas -->
+      <div class="shloka-box">
+        <p class="shloka-line">
+          वक्रतुण्ड महाकाय, सूर्यकोटि समप्रभ ।<br>
+          निर्विघ्नं कुरु मे देव, सर्वकार्येषु सर्वदा ॥
+        </p>
+        <div class="ornament-divider">
+          <span class="line"></span>
+          <span class="star">✦</span>
+          <span class="line"></span>
+        </div>
+        <p class="shloka-line mangal-shloka">
+          मंगलम् भगवान विष्णुः, मंगलम् गरुड़ध्वजः ।<br>
+          मंगलम् पुण्डरीकाक्षः, मंगलाय तनो हरिः ॥
+        </p>
+      </div>
+
+      <!-- Couplet (चिराग शायरी) -->
+      <div class="couplet-banner">
+        <p>
+          "प्रज्वलीत रहे यह दिव्य ज्योति, जलता हुआ ये चिराग रहे ।<br>
+          सुखी रहे हमेशा यह परिणय, अमर प्रेम ये सुहाग रहे ॥"
+        </p>
+      </div>
+
+      <!-- Tagline -->
+      <div class="warm-tagline">
+        <span class="tagline-badge" data-hi="॥ सस्नेह निमंत्रण ॥" data-en="~ Warm Wedding Invitation ~">॥ सस्नेह निमंत्रण ॥</span>
+      </div>
+
+      <!-- Couple Art Graphic -->
+      <div class="couple-art-container">
+        <img src="assets/images/couple-art.svg" alt="Suruchi & Vikky Wedding Art" class="couple-art-img">
+      </div>
+
+      <!-- Grand Wedding Title -->
+      <div class="wedding-announcement">
+        <div class="shubh-vivah-tag" data-hi="॥ पावन परिणयोत्सव ॥" data-en="~ The Sacred Wedding ~">॥ पावन परिणयोत्सव ॥</div>
+        
+        <h1 class="couple-names-grand">
+          <span class="bride-name" data-hi="आयु० सुरुचि कुमारी" data-en="Suruchi Kumari">आयु० सुरुचि कुमारी</span>
+          <span class="weds-symbol">
+            <span class="sang-text" data-hi="संग" data-en="weds">संग</span>
+          </span>
+          <span class="groom-name" data-hi="चि० विक्की कुमार" data-en="Vikky Kumar">चि० विक्की कुमार</span>
+        </h1>
+
+        <div class="wedding-date-hero">
+          <div class="date-badge-pill">
+            <span class="date-num">24</span>
+            <div class="date-text-stack">
+              <span class="date-month" data-hi="नवंबर 2026" data-en="November 2026">नवंबर 2026</span>
+              <span class="date-day" data-hi="मंगलवार (शुभ विवाह)" data-en="Tuesday (Grand Wedding)">मंगलवार (शुभ विवाह)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Golden Divider -->
+    <div class="ornate-separator">
+      <img src="assets/images/mandala.svg" alt="divider" class="sep-mandala">
+    </div>
+
+    <!-- ==========================================
+         SECTION 2: INVITATION MESSAGE
+         ========================================== -->
+    <section class="section message-section" id="invitation-text">
+      <div class="card-paper-box">
+        <div class="kalash-icon-wrapper">
+          <img src="assets/images/kalash.svg" alt="Shubh Kalash" class="kalash-img">
+        </div>
+
+        <h3 class="salutation-title" data-hi="स्नेही स्वजन," data-en="Dear Family & Friends,">स्नेही स्वजन,</h3>
+        
+        <p class="lead-msg" data-hi="परमपिता परमेश्वर की असीम अनुकम्पा से," data-en="By the divine grace of the Almighty,">
+          परमपिता परमेश्वर की असीम अनुकम्पा से,
+        </p>
+
+        <p class="body-invitation-msg" data-hi="हमारे परिवार के इस मांगलिक अवसर पर आप सपरिवार सादर आमंत्रित हैं। वर-वधू को अपना स्नेहाशीष व शुभाशीर्वाद प्रदान कर हमें अनुगृहित करें।" data-en="You are cordially invited with your family to grace the auspicious wedding ceremony and shower your warm blessings upon the bride and groom.">
+          हमारे परिवार के इस मांगलिक अवसर पर आप सपरिवार सादर आमंत्रित हैं। वर-वधू को अपना स्नेहाशीष व शुभाशीर्वाद प्रदान कर हमें अनुगृहित करें।
+        </p>
+
+        <div class="card-highlight-quote" data-hi="के पावन परिणयोत्सव के मांगलिक बेला पर सपरिवार पधार कर वर-वधू को अपना स्नेहाशीष प्रदान कर हमें अनुगृहित करें।" data-en="Please join us with your gracious presence and bless the couple as they embark on this sacred journey of eternal togetherness.">
+          "के पावन परिणयोत्सव के मांगलिक बेला पर सपरिवार पधार कर वर-वधू को अपना स्नेहाशीष प्रदान कर हमें अनुगृहित करें।"
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: THE COUPLE & PARENTS LINEAGE
+         ========================================== -->
+    <section class="section couple-profiles-section" id="the-couple">
+      <div class="section-header">
+        <h2 class="section-title" data-hi="वर एवं वधू" data-en="The Bride & Groom">वर एवं वधू</h2>
+        <p class="section-subtitle" data-hi="दो आत्माओं और दो परिवारों का पावन मिलन" data-en="A Sacred Union of Two Souls & Families">दो आत्माओं और दो परिवारों का पावन मिलन</p>
+      </div>
+
+      <div class="couple-grid">
+        <!-- Bride Profile Card -->
+        <div class="profile-card bride-card">
+          <div class="card-badge" data-hi="वधू (Bride)" data-en="Bride">वधू (Bride)</div>
+          <h3 class="profile-name" data-hi="आयु० सुरुचि कुमारी" data-en="Suruchi Kumari">आयु० सुरुचि कुमारी</h3>
+          
+          <div class="profile-details">
+            <p class="parents-line">
+              <strong data-hi="सुपुत्री:" data-en="Daughter of:">सुपुत्री:</strong><br>
+              <span data-hi="श्रीमती संगीता देवी एवं श्री पप्पू प्रसाद" data-en="Smt. Sangeeta Devi &amp; Shri Pappu Prasad">श्रीमती संगीता देवी एवं श्री पप्पू प्रसाद</span>
+            </p>
+            <p class="residence-line">
+              <strong data-hi="निवास:" data-en="Residence:">निवास:</strong><br>
+              <span data-hi="गोनावाँ रोड, हरनौत, जिला– नालंदा (बिहार) – 803110" data-en="Gonawan Road, Harnaut, Dist. Nalanda (Bihar) - 803110">गोनावाँ रोड, हरनौत, जिला– नालंदा (बिहार) – 803110</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Center Knot Motif -->
+        <div class="gathbandhan-knot">
+          <div class="knot-circle">
+            <span class="knot-symbol">💍</span>
+          </div>
+        </div>
+
+        <!-- Groom Profile Card -->
+        <div class="profile-card groom-card">
+          <div class="card-badge" data-hi="वर (Groom)" data-en="Groom">वर (Groom)</div>
+          <h3 class="profile-name" data-hi="चि० विक्की कुमार" data-en="Vikky Kumar">चि० विक्की कुमार</h3>
+          
+          <div class="profile-details">
+            <p class="parents-line">
+              <strong data-hi="सुपुत्र:" data-en="Son of:">सुपुत्र:</strong><br>
+              <span data-hi="श्रीमती मंजु देवी एवं श्री ब्रीज किशोर सिंह" data-en="Smt. Manju Devi &amp; Shri Brij Kishore Singh">श्रीमती मंजु देवी एवं श्री ब्रीज किशोर सिंह</span>
+            </p>
+            <p class="residence-line">
+              <strong data-hi="निवास:" data-en="Residence:">निवास:</strong><br>
+              <span data-hi="सिसरा, घोसी, जिला– जहानाबाद (बिहार) – 804406" data-en="Sisra, Ghosi, Dist. Jehanabad (Bihar) - 804406">सिसरा, घोसी, जिला– जहानाबाद (बिहार) – 804406</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: MANGALIK KARYAKRAM (TIMELINE)
+         ========================================== -->
+    <section class="section events-section" id="karyakram">
+      <div class="section-header">
+        <span class="karyakram-pill" data-hi="॥ मांगलिक कार्यक्रम ॥" data-en="~ Wedding Itinerary ~">॥ मांगलिक कार्यक्रम ॥</span>
+        <h2 class="section-title" data-hi="विवाह समारोह की शुभ घड़ियाँ" data-en="Wedding Ceremonies Schedule">विवाह समारोह की शुभ घड़ियाँ</h2>
+        <p class="section-subtitle" data-hi="हर रस्म में आपकी गरिमामयी उपस्थिति प्रार्थनीय है" data-en="We request the honor of your presence at all ceremonies">हर रस्म में आपकी गरिमामयी उपस्थिति प्रार्थनीय है</p>
+      </div>
+
+      <div class="timeline-container">
+        
+        <!-- Event 1: Tilak -->
+        <div class="timeline-item" data-event="tilak">
+          <div class="timeline-marker">
+            <img src="assets/images/tilak.svg" alt="Tilak Ceremony" class="timeline-icon">
+          </div>
+          <div class="event-card">
+            <div class="event-date-badge">
+              <span class="event-day-name" data-hi="गुरुवार" data-en="Thursday">गुरुवार</span>
+              <span class="event-date-str">19.11.2026</span>
+            </div>
+            <h3 class="event-title" data-hi="तिलक समारोह" data-en="Tilak Ceremony">तिलक समारोह</h3>
+            <p class="event-desc" data-hi="शुभ शगुन एवं तिलक की पावन रस्म।" data-en="Auspicious Tilak rituals and blessings.">शुभ शगुन एवं तिलक की पावन रस्म।</p>
+            <button class="add-cal-btn" onclick="addToGoogleCalendar('tilak')" aria-label="Add Tilak to Calendar">
+              📅 <span data-hi="कैलेंडर में जोड़ें" data-en="Add to Calendar">कैलेंडर में जोड़ें</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Event 2: Mandwa & Haldi -->
+        <div class="timeline-item" data-event="haldi">
+          <div class="timeline-marker">
+            <img src="assets/images/haldi.svg" alt="Haldi Ceremony" class="timeline-icon">
+          </div>
+          <div class="event-card">
+            <div class="event-date-badge">
+              <span class="event-day-name" data-hi="रविवार" data-en="Sunday">रविवार</span>
+              <span class="event-date-str">22.11.2026</span>
+            </div>
+            <h3 class="event-title" data-hi="मड़वा, हल्दी एवं मटकोर" data-en="Mandwa, Haldi & Matkor">मड़वा, हल्दी एवं मटकोर</h3>
+            <p class="event-desc" data-hi="हल्दी की पीली रस्म, मंगल गीत एवं मड़वा पूजन।" data-en="Traditional Haldi paste, joyous folk songs and Mandwa puja.">हल्दी की पीली रस्म, मंगल गीत एवं मड़वा पूजन।</p>
+            <button class="add-cal-btn" onclick="addToGoogleCalendar('haldi')" aria-label="Add Haldi to Calendar">
+              📅 <span data-hi="कैलेंडर में जोड़ें" data-en="Add to Calendar">कैलेंडर में जोड़ें</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Event 3: Sangeet & Mehndi -->
+        <div class="timeline-item" data-event="sangeet">
+          <div class="timeline-marker">
+            <img src="assets/images/dholak.svg" alt="Sangeet Ceremony" class="timeline-icon">
+          </div>
+          <div class="event-card">
+            <div class="event-date-badge">
+              <span class="event-day-name" data-hi="सोमवार" data-en="Monday">सोमवार</span>
+              <span class="event-date-str">23.11.2026</span>
+            </div>
+            <h3 class="event-title" data-hi="संगीत एवं मेंहदी" data-en="Sangeet & Mehndi">संगीत एवं मेंहदी</h3>
+            <p class="event-desc" data-hi="सहेलियों के हाथों में रचेगी मेंहदी और गूंजेंगे संगीत के सुर।" data-en="Fragrant henna designs, musical beats, and celebratory dancing.">सहेलियों के हाथों में रचेगी मेंहदी और गूंजेंगे संगीत के सुर।</p>
+            <button class="add-cal-btn" onclick="addToGoogleCalendar('sangeet')" aria-label="Add Sangeet to Calendar">
+              📅 <span data-hi="कैलेंडर में जोड़ें" data-en="Add to Calendar">कैलेंडर में जोड़ें</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Event 4: Vivah & Baraat -->
+        <div class="timeline-item timeline-grand" data-event="vivah">
+          <div class="timeline-marker marker-highlight">
+            <img src="assets/images/vivah.svg" alt="Grand Vivah" class="timeline-icon">
+          </div>
+          <div class="event-card card-highlight">
+            <div class="event-date-badge badge-grand">
+              <span class="event-day-name" data-hi="मंगलवार (मुख्य दिवस)" data-en="Tuesday (Grand Day)">मंगलवार (मुख्य दिवस)</span>
+              <span class="event-date-str">24.11.2026</span>
+            </div>
+            <h3 class="event-title title-grand" data-hi="बारात आगमन, प्रीतिभोज एवं शुभ विवाह" data-en="Baraat, Reception & Grand Vivah">बारात आगमन, प्रीतिभोज एवं शुभ विवाह</h3>
+            <ul class="event-sub-schedule">
+              <li>🎺 <strong data-hi="बारात आगमन:" data-en="Baraat Arrival:">बारात आगमन:</strong> <span data-hi="शाम 07:00 बजे" data-en="07:00 PM onwards">शाम 07:00 बजे</span></li>
+              <li>🍽️ <strong data-hi="प्रीतिभोज (भोज):" data-en="Dinner Reception:">प्रीतिभोज (भोज):</strong> <span data-hi="रात्रि 08:00 बजे से" data-en="08:00 PM onwards">रात्रि 08:00 बजे से</span></li>
+              <li>🔥 <strong data-hi="पावन पाणिग्रहण संस्कार:" data-en="Sacred Wedding Rituals:">पावन पाणिग्रहण संस्कार:</strong> <span data-hi="शुभ लग्न बेला में" data-en="Auspicious Muhurat">शुभ लग्न बेला में</span></li>
+            </ul>
+            <button class="add-cal-btn btn-gold" onclick="addToGoogleCalendar('vivah')" aria-label="Add Wedding to Calendar">
+              🌟 <span data-hi="विवाह दिवस कैलेंडर में जोड़ें" data-en="Add Wedding Day to Calendar">विवाह दिवस कैलेंडर में जोड़ें</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Residence Notice Callout -->
+      <div class="residence-notice-card">
+        <div class="notice-icon">🏡</div>
+        <div class="notice-text">
+          <strong data-hi="विशेष नोट:" data-en="Special Note:">विशेष नोट:</strong>
+          <span data-hi="समस्त वैवाहिक कार्यक्रम हमारे निवास स्थान (गोनावाँ रोड, हरनौत, नालंदा) से ही सम्पन्न होगा।" data-en="All wedding rituals and celebrations will be held at our family residence (Gonawan Road, Harnaut, Nalanda).">समस्त वैवाहिक कार्यक्रम हमारे निवास स्थान (गोनावाँ रोड, हरनौत, नालंदा) से ही सम्पन्न होगा।</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: LIVE COUNTDOWN TIMER
+         ========================================== -->
+    <section class="section countdown-section" id="countdown">
+      <div class="countdown-card">
+        <h2 class="countdown-heading" data-hi="शुभ घड़ी का इंतज़ार" data-en="Awaiting the Auspicious Moment">शुभ घड़ी का इंतज़ार</h2>
+        <p class="countdown-sub" data-hi="24 नवंबर 2026 तक शेष समय" data-en="Counting down to 24th November 2026">24 नवंबर 2026 तक शेष समय</p>
+        
+        <div class="timer-grid">
+          <div class="time-box">
+            <span class="time-val" id="timer-days">00</span>
+            <span class="time-label" data-hi="दिन" data-en="Days">दिन</span>
+          </div>
+          <div class="time-divider">:</div>
+          <div class="time-box">
+            <span class="time-val" id="timer-hours">00</span>
+            <span class="time-label" data-hi="घंटे" data-en="Hours">घंटे</span>
+          </div>
+          <div class="time-divider">:</div>
+          <div class="time-box">
+            <span class="time-val" id="timer-mins">00</span>
+            <span class="time-label" data-hi="मिनट" data-en="Mins">मिनट</span>
+          </div>
+          <div class="time-divider">:</div>
+          <div class="time-box">
+            <span class="time-val" id="timer-secs">00</span>
+            <span class="time-label" data-hi="सेकंड" data-en="Secs">सेकंड</span>
+          </div>
+        </div>
+
+        <div class="countdown-action">
+          <button class="save-the-date-btn" onclick="addToGoogleCalendar('vivah')">
+            🔔 <span data-hi="कैलेंडर में सेव करें" data-en="Save The Date in Calendar">कैलेंडर में सेव करें</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6: BAL MANUHAR (CHILD'S MESSAGE)
+         ========================================== -->
+    <section class="section bal-manuhar-section" id="bal-manuhar">
+      <div class="manuhar-card">
+        <div class="manuhar-sparkle">✨ 💖 ✨</div>
+        <h3 class="manuhar-title" data-hi="॥ बाल मनुहार ॥" data-en="~ Little One's Request ~">॥ बाल मनुहार ॥</h3>
+        
+        <blockquote class="manuhar-quote">
+          “हल्दी है, चन्दन है, रिश्तों का बंधन है,<br>
+          मेरी दीदी की शादी में आपका हार्दिक अभिनंदन है।”
+        </blockquote>
+
+        <p class="manuhar-author">
+          — <strong data-hi="आपकी लाडली 'श्रृष्टि'" data-en="Your Beloved 'Shrishti'">आपकी लाडली "श्रृष्टि"</strong> 💕
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7: VENUE & GOOGLE MAPS
+         ========================================== -->
+    <section class="section venue-section" id="venue">
+      <div class="section-header">
+        <span class="karyakram-pill" data-hi="॥ कार्यक्रम स्थल ॥" data-en="~ Ceremony Location ~">॥ कार्यक्रम स्थल ॥</span>
+        <h2 class="section-title" data-hi="स्थान एवं मार्ग दर्शन" data-en="Venue & Route Map">स्थान एवं मार्ग दर्शन</h2>
+      </div>
+
+      <div class="venue-card">
+        <div class="venue-art-banner">
+          <img src="assets/images/mandala.svg" alt="mandala" class="venue-mandala-bg">
+          <div class="venue-badge-pill">🏡 <span data-hi="निवास स्थान" data-en="Family Residence">निवास स्थान</span></div>
+        </div>
+
+        <div class="venue-info">
+          <h3 class="venue-name" data-hi="श्री पप्पू प्रसाद जी का निवास" data-en="Residence of Shri Pappu Prasad">श्री पप्पू प्रसाद जी का निवास</h3>
+          
+          <address class="venue-address">
+            <p><strong>गोनावाँ रोड, हरनौत</strong></p>
+            <p>जिला– नालंदा (बिहार) – 803110</p>
+            <p class="en-address-line">Gonawan Road, Harnaut, Nalanda, Bihar - 803110</p>
+          </address>
+
+          <!-- Buttons: Map & Copy Address -->
+          <div class="venue-action-buttons">
+            <a href="https://www.google.com/maps/search/?api=1&query=Gonawan+Road+Harnaut+Nalanda+Bihar+803110" target="_blank" rel="noopener noreferrer" class="btn-maps">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <span data-hi="गूगल मैप्स पर देखें" data-en="Open in Google Maps">गूगल मैप्स पर देखें</span>
+            </a>
+
+            <button class="btn-copy-address" id="copy-address-btn" onclick="copyVenueAddress()">
+              📋 <span data-hi="पता कॉपी करें" data-en="Copy Address">पता कॉपी करें</span>
+            </button>
+          </div>
+
+          <!-- Embedded Map -->
+          <div class="map-embed-container">
+            <iframe 
+              src="https://maps.google.com/maps?q=Harnaut%20Nalanda%20Bihar%20803110&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="240" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Wedding Venue Location Map">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 8: SWAGATKARTA & HOST COMMITTEE
+         ========================================== -->
+    <section class="section family-committee-section" id="family">
+      <div class="section-header">
+        <h2 class="section-title" data-hi="स्वागतकर्ता एवं परिजन" data-en="Hosts & Welcoming Family">स्वागतकर्ता एवं परिजन</h2>
+        <p class="section-subtitle" data-hi="आपके शुभागमन की प्रतीक्षा में संपूर्ण परिवार" data-en="Awaiting your presence with warm hearts">आपके शुभागमन की प्रतीक्षा में संपूर्ण परिवार</p>
+      </div>
+
+      <div class="family-cards-container">
+        
+        <!-- Akankshi -->
+        <div class="family-box akankshi-box">
+          <div class="role-badge" data-hi="॥ आकांक्षी ॥" data-en="~ Seeking Blessings ~">॥ आकांक्षी ॥</div>
+          <p class="names-list highlight-name">श्री पप्पू प्रसाद</p>
+        </div>
+
+        <!-- Swagatkarta -->
+        <div class="family-box swagat-box">
+          <div class="role-badge" data-hi="॥ स्वागतकर्ता ॥" data-en="~ Welcoming You ~">॥ स्वागतकर्ता ॥</div>
+          <p class="names-list">
+            पंकज राज, शिवम कुमार,<br>
+            नीलकमल वत्स एवं प्रशांत कुमार
+          </p>
+        </div>
+
+        <!-- Darshanabhilashi -->
+        <div class="family-box darshan-box">
+          <div class="role-badge" data-hi="॥ दर्शनाभिलाषी ॥" data-en="~ Eagerly Awaiting ~">॥ दर्शनाभिलाषी ॥</div>
+          <p class="names-list">
+            अशोक, नंदू, मुकेश, राहुल, आकाश,<br>
+            सूरज, बंटी, रोहित (लल्ला) एवं समस्त परिवार
+          </p>
+        </div>
+
+        <!-- Preshak -->
+        <div class="family-box preshak-box">
+          <div class="role-badge" data-hi="॥ प्रेषक ॥" data-en="~ Invitation Sender ~">॥ प्रेषक ॥</div>
+          <p class="preshak-name">पप्पू प्रसाद</p>
+          <p class="preshak-address">
+            गोनावाँ रोड, हरनौत, जिला– नालंदा (बिहार) – 803110
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 9: CONTACT & RSVP
+         ========================================== -->
+    <section class="section contact-section" id="contact">
+      <div class="section-header">
+        <span class="karyakram-pill" data-hi="॥ संपर्क एवं उपस्थिति ॥" data-en="~ Contact & RSVP ~">॥ संपर्क एवं उपस्थिति ॥</span>
+        <h2 class="section-title" data-hi="संपर्क सूत्र एवं सपरिवार उपस्थिति" data-en="Direct Contact & RSVP">संपर्क सूत्र एवं सपरिवार उपस्थिति</h2>
+      </div>
+
+      <div class="rsvp-card">
+        <div class="rsvp-prompt">
+          <p class="rsvp-text" data-hi="कृपया अपनी सपरिवार उपस्थिति से हमें पूर्व में अवगत कराकर अनुगृहीत करें।" data-en="Please let us know of your presence in advance so we can welcome you warmly!">
+            कृपया अपनी सपरिवार उपस्थिति से हमें पूर्व में अवगत कराकर अनुगृहीत करें।
+          </p>
+
+          <!-- WhatsApp RSVP Action -->
+          <a href="https://api.whatsapp.com/send?phone=917480054663&text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20%E0%A4%AA%E0%A4%AA%E0%A5%8D%E0%A4%AA%E0%A5%82%20%E0%A4%9C%E0%A5%80!%20%E0%A4%B9%E0%A4%AE%20%E0%A4%B8%E0%A5%81%E0%A4%B0%E0%A5%81%E0%A4%9A%E0%A4%BF%20%E0%A4%B8%E0%A4%82%E0%A4%97%20%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A5%8D%E0%A4%95%E0%A5%80%20%E0%A4%95%E0%A5%87%20%E0%A4%B5%E0%A4%BF%E0%A4%B5%E0%A4%BE%E0%A4%B9%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%B8%E0%A4%AA%E0%A4%BE%E0%A4%B0%E0%A4%BF%E0%A4%B5%E0%A4%BE%E0%A4%B0%20%E0%A4%85%E0%A4%B5%E0%A4%B6%E0%A5%8D%E0%A4%AF%20%E0%A4%AA%E0%A4%A7%E0%A4%BE%E0%A4%B0%E0%A5%87%E0%A4%82%E0%A4%97%E0%A5%87%E0%A5%A4%20%E0%A4%B9%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%A6%E0%A4%BF%E0%A4%95%20%E0%A4%AC%E0%A4%A7%E0%A4%BE%E0%A4%88!" target="_blank" rel="noopener noreferrer" class="rsvp-wa-btn">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.45 0-2.88-.38-4.14-1.11l-.3-.17-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.43c0-4.54 3.7-8.24 8.24-8.24zM8.53 7.33c-.14 0-.37.05-.56.26-.19.21-.74.72-.74 1.76 0 1.04.76 2.05.86 2.19.11.14 1.5 2.29 3.63 3.21.51.22.9.35 1.21.45.51.16.98.14 1.35.08.41-.06 1.27-.52 1.45-1.02.18-.5.18-.93.13-1.02-.05-.09-.2-.14-.42-.25-.22-.11-1.27-.63-1.47-.7-.2-.07-.35-.11-.5.11-.15.21-.58.7-.71.85-.13.15-.26.17-.48.06-.22-.11-.93-.34-1.77-1.09-.65-.58-1.09-1.29-1.22-1.51-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.53-1.28-.73-1.75-.19-.46-.39-.4-.54-.41-.14-.01-.3-.01-.46-.01z"/>
+            </svg>
+            <span data-hi="व्हाट्सएप पर भेजें" data-en="Send on WhatsApp">व्हाट्सएप पर भेजें</span>
+          </a>
+        </div>
+
+        <div class="phone-numbers-box">
+          <p class="contacts-title" data-hi="सीधे कॉल करने हेतु क्लिक करें:" data-en="Click below to call directly:">सीधे कॉल करने हेतु क्लिक करें:</p>
+          
+          <div class="phone-buttons-grid">
+            <!-- Contact 1 -->
+            <div class="phone-item">
+              <span class="phone-owner" data-hi="श्री पप्पू प्रसाद" data-en="Shri Pappu Prasad">श्री पप्पू प्रसाद</span>
+              <div class="phone-links">
+                <a href="tel:+917480054663" class="call-btn">
+                  📞 <strong>7480054663</strong>
+                </a>
+                <a href="https://wa.me/917480054663" target="_blank" rel="noopener noreferrer" class="wa-icon-btn" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="#FFFFFF">
+                    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.45 0-2.88-.38-4.14-1.11l-.3-.17-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.43c0-4.54 3.7-8.24 8.24-8.24zM8.53 7.33c-.14 0-.37.05-.56.26-.19.21-.74.72-.74 1.76 0 1.04.76 2.05.86 2.19.11.14 1.5 2.29 3.63 3.21.51.22.9.35 1.21.45.51.16.98.14 1.35.08.41-.06 1.27-.52 1.45-1.02.18-.5.18-.93.13-1.02-.05-.09-.2-.14-.42-.25-.22-.11-1.27-.63-1.47-.7-.2-.07-.35-.11-.5.11-.15.21-.58.7-.71.85-.13.15-.26.17-.48.06-.22-.11-.93-.34-1.77-1.09-.65-.58-1.09-1.29-1.22-1.51-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.53-1.28-.73-1.75-.19-.46-.39-.4-.54-.41-.14-.01-.3-.01-.46-.01z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Contact 2 -->
+            <div class="phone-item">
+              <span class="phone-owner" data-hi="संपर्क सूत्र" data-en="Family Helpline">संपर्क सूत्र</span>
+              <div class="phone-links">
+                <a href="tel:+917480942905" class="call-btn">
+                  📞 <strong>7480942905</strong>
+                </a>
+                <a href="https://wa.me/917480942905" target="_blank" rel="noopener noreferrer" class="wa-icon-btn" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="#FFFFFF">
+                    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.45 0-2.88-.38-4.14-1.11l-.3-.17-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.43c0-4.54 3.7-8.24 8.24-8.24zM8.53 7.33c-.14 0-.37.05-.56.26-.19.21-.74.72-.74 1.76 0 1.04.76 2.05.86 2.19.11.14 1.5 2.29 3.63 3.21.51.22.9.35 1.21.45.51.16.98.14 1.35.08.41-.06 1.27-.52 1.45-1.02.18-.5.18-.93.13-1.02-.05-.09-.2-.14-.42-.25-.22-.11-1.27-.63-1.47-.7-.2-.07-.35-.11-.5.11-.15.21-.58.7-.71.85-.13.15-.26.17-.48.06-.22-.11-.93-.34-1.77-1.09-.65-.58-1.09-1.29-1.22-1.51-.13-.22-.01-.34.1-.45.1-.1.22-.26.33-.39.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.39-.06-.11-.53-1.28-.73-1.75-.19-.46-.39-.4-.54-.41-.14-.01-.3-.01-.46-.01z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 10: SHARE INVITATION & FOOTER
+         ========================================== -->
+    <section class="section share-footer-section" id="share-footer">
+      
+      <!-- WhatsApp Share CTA -->
+      <div class="share-box">
+        <h3 class="share-title" data-hi="परिवार व मित्रों के साथ शेयर करें" data-en="Share with Family & Friends">परिवार व मित्रों के साथ शेयर करें</h3>
+        <p class="share-desc" data-hi="इस डिजिटल निमंत्रण पत्र को व्हाट्सएप पर अपने स्नेही स्वजनों को भेजें" data-en="Forward this digital wedding invitation easily via WhatsApp">
+          इस डिजिटल निमंत्रण पत्र को व्हाट्सएप पर अपने स्नेही स्वजनों को भेजें
+        </p>
+        
+        <button id="share-wa-btn" class="share-wa-btn" onclick="shareOnWhatsApp()">
+          <span class="wa-white-icon">📲</span>
+          <span data-hi="व्हाट्सएप पर निमंत्रण शेयर करें" data-en="Share Invitation on WhatsApp">व्हाट्सएप पर निमंत्रण शेयर करें</span>
+        </button>
+      </div>
+
+      <!-- Royal Blessing Footer -->
+      <footer class="royal-footer">
+        <div class="footer-kalash">
+          <img src="assets/images/kalash.svg" alt="Kalash" class="footer-kalash-icon">
+        </div>
+
+        <p class="footer-blessing" data-hi="॥ आपकी उपस्थिति हमारे लिए परम सौभाग्य होगी ॥" data-en="Your presence will be our greatest blessing">
+          ॥ आपकी उपस्थिति हमारे लिए परम सौभाग्य होगी ॥
+        </p>
+        
+        <p class="footer-namaste">🙏 धन्यवाद एवं सादर प्रणाम 🙏</p>
+        
+        <div class="footer-credits">
+          <p>सुरुचि संग विक्की • 24 नवंबर 2026 • हरनौत (नालंदा)</p>
+        </div>
+      </footer>
+
+    </section>
+
+  </main>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="goldS" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFEAA7"/>
+      <stop offset="60%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#8E6A16"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Sacred Fire / Mandap Hawan Kund & Varmala Motif -->
+  <!-- Hawan Kund Base -->
+  <path d="M25 78 L32 88 L68 88 L75 78 Z" fill="url(#goldS)" stroke="#8B1D2C" stroke-width="1.5"/>
+  <path d="M20 72 L25 78 L75 78 L80 72 Z" fill="#8B1D2C" stroke="url(#goldS)" stroke-width="1.5"/>
+  <path d="M28 72 L32 76 L68 76 L72 72 Z" fill="#2E080E"/>
+  
+  <!-- Sacred Fire Flames -->
+  <path d="M50 40 C42 50 40 60 50 72 C60 60 58 50 50 40 Z" fill="#FF5722"/>
+  <path d="M48 46 C42 54 44 64 50 70 C56 64 58 54 52 46 Z" fill="#FF9800"/>
+  <path d="M50 52 C46 58 47 65 50 69 C53 65 54 58 50 52 Z" fill="#FFEB3B"/>
+  
+  <!-- Varmala / Floral Garland Arches above -->
+  <path d="M18 42 Q50 20 82 42" stroke="url(#goldS)" stroke-width="2" fill="none"/>
+  <path d="M20 45 Q50 25 80 45" stroke="#C5162D" stroke-width="3" stroke-dasharray="2 6" fill="none"/>
+  
+  <!-- Wedding Bells / Kalgi / Mangalsutra Motif -->
+  <circle cx="50" cy="18" r="6" fill="url(#goldS)"/>
+  <circle cx="50" cy="18" r="3" fill="#C5162D"/>
+  <path d="M46 22 L44 32 L56 32 L54 22 Z" fill="url(#goldS)"/>
+  <circle cx="50" cy="35" r="2.5" fill="#C5162D"/>
+  
+  <!-- Flowers flanking -->
+  <circle cx="24" cy="40" r="4.5" fill="#E91E63"/>
+  <circle cx="76" cy="40" r="4.5" fill="#E91E63"/>
+  <circle cx="24" cy="40" r="2" fill="#FFD54F"/>
+  <circle cx="76" cy="40" r="2" fill="#FFD54F"/>
+</svg>

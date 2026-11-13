@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="wood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C0392B"/>
+      <stop offset="50%" stop-color="#8B1D2C"/>
+      <stop offset="100%" stop-color="#4A0C16"/>
+    </linearGradient>
+    <linearGradient id="goldD" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFEAA7"/>
+      <stop offset="60%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#8E6A16"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Dholak Body (angled) -->
+  <g transform="rotate(-18 50 50)">
+    <!-- Barrel body -->
+    <path d="M26 34 C40 24 60 24 74 34 L78 66 C60 76 40 76 22 66 Z" fill="url(#wood)" stroke="url(#goldD)" stroke-width="1.5"/>
+    
+    <!-- Left Drum Head -->
+    <ellipse cx="24" cy="50" rx="6" ry="17" fill="#F8E5C8" stroke="url(#goldD)" stroke-width="2"/>
+    <ellipse cx="24" cy="50" rx="3" ry="9" fill="#5D4037"/>
+    
+    <!-- Right Drum Head -->
+    <ellipse cx="76" cy="50" rx="6" ry="17" fill="#F8E5C8" stroke="url(#goldD)" stroke-width="2"/>
+    <ellipse cx="76" cy="50" rx="3" ry="9" fill="#5D4037"/>
+    
+    <!-- Ropes (Tuning laces criss-cross) -->
+    <path d="M26 35 L42 68 L58 31 L74 67" stroke="url(#goldD)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    <path d="M26 65 L42 32 L58 69 L74 33" stroke="url(#goldD)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    
+    <!-- Rings on ropes -->
+    <circle cx="42" cy="50" r="2.5" fill="#FFEAA7"/>
+    <circle cx="58" cy="50" r="2.5" fill="#FFEAA7"/>
+  </g>
+  
+  <!-- Musical notes -->
+  <path d="M78 20 C78 16 86 14 88 18 L88 28 C86 26 82 28 82 30 C82 32 84 34 86 34 C88 34 90 32 90 28 L90 14 C86 14 80 16 78 20 Z" fill="url(#goldD)"/>
+  <circle cx="16" cy="22" r="3" fill="url(#goldD)"/>
+  <path d="M19 22 L19 12 Q24 10 26 14" stroke="url(#goldD)" stroke-width="1.5" fill="none"/>
+</svg>

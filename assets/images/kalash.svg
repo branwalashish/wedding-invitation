@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="goldK" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDF0CD" />
+      <stop offset="40%" stop-color="#D4AF37" />
+      <stop offset="80%" stop-color="#AA771C" />
+      <stop offset="100%" stop-color="#E5C158" />
+    </linearGradient>
+    <linearGradient id="greenL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#80A352" />
+      <stop offset="100%" stop-color="#386622" />
+    </linearGradient>
+  </defs>
+  <!-- Coconut -->
+  <ellipse cx="50" cy="30" rx="14" ry="18" fill="#8D5B2A"/>
+  <path d="M50 12 L50 24 M46 16 L48 24 M54 16 L52 24" stroke="#5D3512" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Mango Leaves -->
+  <path d="M50 36 C35 32 24 22 20 12 C30 20 40 32 50 36 Z" fill="url(#greenL)"/>
+  <path d="M50 36 C65 32 76 22 80 12 C70 20 60 32 50 36 Z" fill="url(#greenL)"/>
+  <path d="M50 36 C40 28 32 10 35 2 C44 14 47 26 50 36 Z" fill="url(#greenL)"/>
+  <path d="M50 36 C60 28 68 10 65 2 C56 14 53 26 50 36 Z" fill="url(#greenL)"/>
+  
+  <!-- Kalash Pot -->
+  <!-- Rim -->
+  <ellipse cx="50" cy="38" rx="20" ry="4" fill="url(#goldK)"/>
+  <ellipse cx="50" cy="39" rx="18" ry="3" fill="#8B1D2C"/>
+  <!-- Neck -->
+  <path d="M34 40 L38 48 C30 55 24 66 26 78 C28 90 40 94 50 94 C60 94 72 90 74 78 C76 66 70 55 62 48 L66 40 Z" fill="url(#goldK)"/>
+  
+  <!-- Red Sacred Thread (Mauli / Kalawa) -->
+  <path d="M36 44 Q50 48 64 44" stroke="#C5162D" stroke-width="2.5" fill="none"/>
+  <path d="M37 47 Q50 51 63 47" stroke="#FFC107" stroke-width="1.5" fill="none"/>
+  
+  <!-- Swastik on Kalash -->
+  <path d="M50 60 L50 78 M41 69 L59 69 M50 60 L58 60 M50 78 L42 78 M41 69 L41 61 M59 69 L59 77" 
+        stroke="#8B1D2C" stroke-width="2.2" stroke-linecap="square" fill="none"/>
+  <circle cx="45" cy="64" r="1.2" fill="#8B1D2C"/>
+  <circle cx="55" cy="64" r="1.2" fill="#8B1D2C"/>
+  <circle cx="45" cy="74" r="1.2" fill="#8B1D2C"/>
+  <circle cx="55" cy="74" r="1.2" fill="#8B1D2C"/>
+  
+  <!-- Base Stand -->
+  <path d="M36 93 L32 98 L68 98 L64 93 Z" fill="url(#goldK)"/>
+</svg>

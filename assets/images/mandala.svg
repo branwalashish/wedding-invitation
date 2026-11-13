@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="goldM" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCEAB3"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#936814"/>
+    </linearGradient>
+  </defs>
+  <!-- Center flower -->
+  <circle cx="60" cy="60" r="8" fill="url(#goldM)"/>
+  <circle cx="60" cy="60" r="14" stroke="url(#goldM)" stroke-width="1.2" stroke-dasharray="2 2"/>
+  
+  <!-- 8 Petals Ring 1 -->
+  <g stroke="url(#goldM)" stroke-width="1.5" fill="none">
+    <path d="M60 46 C56 40 64 40 60 46"/>
+    <path d="M60 74 C56 80 64 80 60 74"/>
+    <path d="M46 60 C40 56 40 64 46 60"/>
+    <path d="M74 60 C80 56 80 64 74 60"/>
+    <circle cx="60" cy="60" r="24"/>
+    <circle cx="60" cy="60" r="32" stroke-dasharray="3 3"/>
+    <circle cx="60" cy="60" r="42"/>
+  </g>
+  
+  <!-- Outer Petals / Lotus rays -->
+  <g stroke="url(#goldM)" stroke-width="1.2" fill="none" opacity="0.85">
+    <path d="M60 18 Q65 30 60 42 Q55 30 60 18 Z"/>
+    <path d="M60 102 Q65 90 60 78 Q55 90 60 102 Z"/>
+    <path d="M18 60 Q30 65 42 60 Q30 55 18 60 Z"/>
+    <path d="M102 60 Q90 65 78 60 Q90 55 102 60 Z"/>
+    
+    <path d="M30 30 Q42 38 48 48 Q38 42 30 30 Z"/>
+    <path d="M90 30 Q78 38 72 48 Q82 42 90 30 Z"/>
+    <path d="M30 90 Q42 82 48 72 Q38 78 30 90 Z"/>
+    <path d="M90 90 Q78 82 72 72 Q82 78 90 90 Z"/>
+  </g>
+  <circle cx="60" cy="60" r="54" stroke="url(#goldM)" stroke-width="0.8" opacity="0.6"/>
+</svg>

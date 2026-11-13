@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F0A15"/>
+      <stop offset="50%" stop-color="#6F1220"/>
+      <stop offset="100%" stop-color="#36050C"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5D6"/>
+      <stop offset="35%" stop-color="#E5C158"/>
+      <stop offset="70%" stop-color="#AA771C"/>
+      <stop offset="100%" stop-color="#FCEAB3"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Ornate Outer Border -->
+  <rect x="25" y="25" width="1150" height="580" rx="16" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+  <rect x="35" y="35" width="1130" height="560" rx="12" fill="none" stroke="url(#goldGrad)" stroke-width="1" stroke-dasharray="6 6" opacity="0.6"/>
+
+  <!-- Corner Mandalas -->
+  <circle cx="55" cy="55" r="20" stroke="url(#goldGrad)" stroke-width="1.5" fill="none"/>
+  <circle cx="1145" cy="55" r="20" stroke="url(#goldGrad)" stroke-width="1.5" fill="none"/>
+  <circle cx="55" cy="575" r="20" stroke="url(#goldGrad)" stroke-width="1.5" fill="none"/>
+  <circle cx="1145" cy="575" r="20" stroke="url(#goldGrad)" stroke-width="1.5" fill="none"/>
+
+  <!-- Inner Card Frame -->
+  <rect x="70" y="65" width="1060" height="500" rx="10" fill="#FAF4E8" filter="url(#cardShadow)"/>
+  <rect x="78" y="73" width="1044" height="484" rx="8" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
+
+  <!-- Ganesha Shloka Header -->
+  <text x="600" y="125" text-anchor="middle" font-family="'Tiro Devanagari Hindi', 'Noto Serif Devanagari', 'Yatra One', serif" font-size="24" fill="#C5162D" font-weight="bold">॥ श्री गणेशाय नमः ॥</text>
+  <text x="600" y="155" text-anchor="middle" font-family="'Tiro Devanagari Hindi', 'Noto Serif Devanagari', 'Hind', serif" font-size="16" fill="#8C6517" font-style="italic">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ । निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥</text>
+
+  <!-- Tagline -->
+  <text x="600" y="195" text-anchor="middle" font-family="'Yatra One', 'Noto Serif Devanagari', serif" font-size="22" fill="#7E1B29" letter-spacing="4">॥ सस्नेह निमंत्रण ॥</text>
+
+  <!-- Divider Line -->
+  <line x1="380" y1="215" x2="820" y2="215" stroke="url(#goldGrad)" stroke-width="2"/>
+  <polygon points="600,210 606,215 600,220 594,215" fill="#C5162D"/>
+
+  <!-- Couple Names Banner -->
+  <text x="600" y="275" text-anchor="middle" font-family="'Cinzel', 'Playfair Display', 'Tiro Devanagari Hindi', serif" font-size="44" font-weight="bold" fill="#72111E">
+    आयु० सुरुचि कुमारी
+  </text>
+  <text x="600" y="325" text-anchor="middle" font-family="'Great Vibes', 'Playfair Display', cursive" font-size="32" fill="#AA771C">
+    — संग (weds) —
+  </text>
+  <text x="600" y="380" text-anchor="middle" font-family="'Cinzel', 'Playfair Display', 'Tiro Devanagari Hindi', serif" font-size="44" font-weight="bold" fill="#72111E">
+    चि० विक्की कुमार
+  </text>
+
+  <!-- Main Wedding Date -->
+  <rect x="420" y="415" width="360" height="46" rx="23" fill="#7A1F2B"/>
+  <text x="600" y="445" text-anchor="middle" font-family="'Hind', 'Noto Sans Devanagari', sans-serif" font-size="20" font-weight="bold" fill="#FFF9ED">
+    शुभ विवाह : 24 नवंबर 2026 (मंगलवार)
+  </text>
+
+  <!-- Location details -->
+  <text x="600" y="495" text-anchor="middle" font-family="'Hind', 'Noto Sans Devanagari', sans-serif" font-size="17" fill="#4A3B32">
+    निवास स्थान: गोनावाँ रोड, हरनौत, जिला– नालंदा (बिहार)
+  </text>
+  <text x="600" y="525" text-anchor="middle" font-family="'Hind', 'Noto Sans Devanagari', sans-serif" font-size="15" fill="#7E1B29" font-weight="600">
+    हल्दी • मड़वा • संगीत • मेंहदी • बारात • शुभ विवाह
+  </text>
+</svg>
