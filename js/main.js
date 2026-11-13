@@ -276,51 +276,45 @@ function stopWeddingSynthMelody() {
 /* ==========================================================================
    2. SCREEN 0: WELCOME OVERLAY & CARD UNSEAL
    ========================================================================== */
+let isOverlayOpened = false;
+
+function openInvitationCard() {
+  if (isOverlayOpened) return;
+  isOverlayOpened = true;
+
+  const welcomeOverlay = document.getElementById('welcome-overlay');
+  if (welcomeOverlay) {
+    welcomeOverlay.classList.add('opened');
+  }
+
+  // 1. Trigger audio play directly within the user gesture (CRITICAL FOR iOS)
+  try {
+    startAudio();
+  } catch (err) {
+    console.warn('Audio playback error:', err);
+  }
+
+  // 2. Smooth scroll into the invitation card
+  setTimeout(() => {
+    const heroSection = document.getElementById('hero');
+    if (heroSection) {
+      heroSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, 300);
+
+  showToast(currentLang === 'hi' ? 'सस्नेह निमंत्रण पत्र में आपका स्वागत है! 🌸' : 'Welcome to the Wedding Invitation! 🌸');
+}
+
+// Global exposure for inline onclick attribute
+window.openInvitationCard = openInvitationCard;
+
 function initWelcomeOverlay() {
   const openCardBtn = document.getElementById('open-card-btn');
-  const welcomeOverlay = document.getElementById('welcome-overlay');
-
-  if (openCardBtn && welcomeOverlay) {
-    let opened = false;
-
-    const handleOpen = (e) => {
-      if (opened) return;
-      opened = true;
-
-      // 1. Trigger audio play directly within the user gesture (CRITICAL FOR iOS)
-      startAudio();
-
-      // 2. Animate envelope unseal
-      welcomeOverlay.classList.add('opened');
-
-      // 3. Smooth scroll into the invitation card
-      setTimeout(() => {
-        const heroSection = document.getElementById('hero');
-        if (heroSection) {
-          heroSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 350);
-
-      showToast(currentLang === 'hi' ? 'सस्नेह निमंत्रण पत्र में आपका स्वागत है! 🌸' : 'Welcome to the Wedding Invitation! 🌸');
-    };
-
-    // Attach both touchend and click so iOS fires instantaneously without 300ms click delay
-    openCardBtn.addEventListener('touchend', (e) => {
-      e.preventDefault();
-      handleOpen(e);
-    }, { passive: false });
-
-    openCardBtn.addEventListener('click', (e) => {
-      handleOpen(e);
-    });
-  }
-}
-          heroSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 350);
-
-      showToast(currentLang === 'hi' ? 'सस्नेह निमंत्रण पत्र में आपका स्वागत है! 🌸' : 'Welcome to the Wedding Invitation! 🌸');
-    });
+  if (openCardBtn) {
+    openCardBtn.addEventListener('click', openInvitationCard);
+    openCardBtn.addEventListener('touchend', () => {
+      openInvitationCard();
+    }, { passive: true });
   }
 }
 
@@ -633,6 +627,7 @@ function showToast(msg) {
 }
 
 // Make functions globally available for inline onclick attributes
+window.openInvitationCard = openInvitationCard;
 window.addToGoogleCalendar = addToGoogleCalendar;
 window.copyVenueAddress = copyVenueAddress;
 window.shareOnWhatsApp = shareOnWhatsApp;
