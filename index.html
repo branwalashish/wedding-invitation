@@ -37,12 +37,10 @@
   <!-- Floating Falling Petals Canvas -->
   <canvas id="petals-canvas" aria-hidden="true"></canvas>
 
-  <!-- Audio Element (Aaj Sajeya from music/ or assets/audio/ or synthesized fallback) -->
-  <audio id="wedding-audio" preload="auto" loop>
-    <source src="music/aaj-sajeya.mp3" type="audio/mpeg">
+  <!-- Audio Element with direct src and iOS attributes for maximum mobile & Safari compatibility -->
+  <audio id="wedding-audio" src="assets/audio/aaj-sajeya.mp3" preload="auto" loop playsinline webkit-playsinline x-webkit-airplay="allow">
     <source src="assets/audio/aaj-sajeya.mp3" type="audio/mpeg">
-    <source src="music/music.mp3" type="audio/mpeg">
-    <source src="music/song.mp3" type="audio/mpeg">
+    <source src="music/aaj-sajeya.mp3" type="audio/mpeg">
   </audio>
 
   <!-- ==============================================
@@ -89,6 +87,7 @@
       </div>
 
       <p class="audio-hint">संगीत के साथ डिजिटल निमंत्रण पत्र का आनंद लें</p>
+      <p class="iphone-tip">📱 iPhone: आवाज़ सुनने हेतु फोन का साइलेंट स्विच (Mute Switch) बंद रखें व वॉल्यूम चेक करें</p>
     </div>
   </div>
 

@@ -10,10 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountdownTimer();
   initPetalShower();
   initLanguageToggle();
+  setupGlobalTouchUnlock();
 });
 
 /* ==========================================================================
-   1. AUDIO ENGINE (Aaj Sajeya + Indian Wedding Melodic Synth Fallback)
+   1. AUDIO ENGINE (iOS & Safari Optimized: Aaj Sajeya + Synth Fallback)
    ========================================================================== */
 let audioContext = null;
 let isAudioPlaying = false;
@@ -25,24 +26,49 @@ const musicLabel = document.getElementById('music-label');
 
 function initAudioEngine() {
   if (audioElement) {
-    audioElement.volume = 0.65;
+    // iOS Safari safely handle volume
+    try {
+      audioElement.volume = 0.8;
+    } catch (e) {
+      // iOS volume is read-only
+    }
 
-    // If real mp3 is found, handle native play/pause events
+    // Preload audio on initial page load
+    try {
+      audioElement.load();
+    } catch (e) {}
+
+    // Event listeners
     audioElement.addEventListener('playing', () => {
       setMusicState(true);
     });
 
     audioElement.addEventListener('pause', () => {
-      setMusicState(false);
+      if (!isAudioPlaying) {
+        setMusicState(false);
+      }
+    });
+
+    audioElement.addEventListener('ended', () => {
+      // Mobile Safari loop reinforcement
+      audioElement.currentTime = 0;
+      audioElement.play().catch(() => {});
     });
 
     audioElement.addEventListener('error', (e) => {
-      console.info('Custom mp3 not found or blocked. Ready for WebAudio wedding synth fallback.');
+      console.warn('Audio tag error, fallback ready:', e);
     });
   }
 
+  // Floating music controller click & touch listeners
   if (musicToggleBtn) {
-    musicToggleBtn.addEventListener('click', toggleMusic);
+    ['click', 'touchend'].forEach(evt => {
+      musicToggleBtn.addEventListener(evt, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMusic();
+      }, { passive: false });
+    });
   }
 
   // Auto-pause when page loses focus / background tab
@@ -75,19 +101,48 @@ function toggleMusic() {
 }
 
 function playAudioInternal() {
+  isAudioPlaying = true;
+
+  // 1. Try HTML5 Audio (Direct user gesture for iOS)
   if (audioElement) {
+    try {
+      audioElement.volume = 0.8;
+    } catch (e) {}
+
     const playPromise = audioElement.play();
     if (playPromise !== undefined) {
       playPromise.then(() => {
         setMusicState(true);
       }).catch(err => {
-        console.warn('HTML5 Audio playback prevented or file not yet added, using WebAudio Synth fallback', err);
-        startWeddingSynthMelody();
+        console.warn('HTML5 Audio play prevented or failed, trying secondary path:', err);
+        // If current source had issue, try alternate path
+        if (!audioElement.src || !audioElement.src.includes('music/')) {
+          audioElement.src = 'music/aaj-sajeya.mp3';
+          audioElement.load();
+          audioElement.play().then(() => {
+            setMusicState(true);
+          }).catch(() => {
+            startWeddingSynthMelody();
+          });
+        } else {
+          startWeddingSynthMelody();
+        }
       });
-      return;
     }
+  } else {
+    startWeddingSynthMelody();
   }
-  startWeddingSynthMelody();
+
+  // 2. Pre-unlock WebAudio context synchronously in user gesture
+  if (!audioContext && (window.AudioContext || window.webkitAudioContext)) {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      audioContext = new AudioCtx();
+    } catch (e) {}
+  }
+  if (audioContext && audioContext.state === 'suspended') {
+    audioContext.resume().catch(() => {});
+  }
 }
 
 function pauseAudioInternal() {
@@ -112,8 +167,27 @@ function setMusicState(playing) {
 }
 
 /**
+ * Global Touch Unlocker for Mobile Safari / iOS
+ * If iOS required additional tap, any touch on screen guarantees audio starts
+ */
+function setupGlobalTouchUnlock() {
+  const unlock = () => {
+    if (isAudioPlaying && audioElement && audioElement.paused) {
+      audioElement.play().catch(() => {});
+    }
+    if (isAudioPlaying && audioContext && audioContext.state === 'suspended') {
+      audioContext.resume().catch(() => {});
+    }
+  };
+
+  ['touchstart', 'touchend', 'click'].forEach(evt => {
+    document.addEventListener(evt, unlock, { passive: true });
+  });
+}
+
+/**
  * Auspicious Indian Wedding Shehnai & Santoor Synthesizer Fallback
- * Plays traditional Raga notes (Sa, Re, Ga, Pa, Dha) when aaj-sajeya.mp3 is not yet placed
+ * Plays traditional Raga notes (Sa, Re, Ga, Pa, Dha)
  */
 function startWeddingSynthMelody() {
   if (synthInterval) return; // already running
@@ -207,8 +281,13 @@ function initWelcomeOverlay() {
   const welcomeOverlay = document.getElementById('welcome-overlay');
 
   if (openCardBtn && welcomeOverlay) {
-    openCardBtn.addEventListener('click', () => {
-      // 1. Trigger audio play on direct user gesture
+    let opened = false;
+
+    const handleOpen = (e) => {
+      if (opened) return;
+      opened = true;
+
+      // 1. Trigger audio play directly within the user gesture (CRITICAL FOR iOS)
       startAudio();
 
       // 2. Animate envelope unseal
@@ -218,6 +297,24 @@ function initWelcomeOverlay() {
       setTimeout(() => {
         const heroSection = document.getElementById('hero');
         if (heroSection) {
+          heroSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 350);
+
+      showToast(currentLang === 'hi' ? 'सस्नेह निमंत्रण पत्र में आपका स्वागत है! 🌸' : 'Welcome to the Wedding Invitation! 🌸');
+    };
+
+    // Attach both touchend and click so iOS fires instantaneously without 300ms click delay
+    openCardBtn.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      handleOpen(e);
+    }, { passive: false });
+
+    openCardBtn.addEventListener('click', (e) => {
+      handleOpen(e);
+    });
+  }
+}
           heroSection.scrollIntoView({ behavior: 'smooth' });
         }
       }, 350);
